@@ -26,8 +26,8 @@ def playground(announce=False):
     # Add NIP89
     nip89info = {
         "name": name,
-        "image": "https://i.nostr.build/3Au1vWCNczJ58dMP.png",
-        "about": "pew pew",
+        "image": "https://i.nostr.build/05oBiasWPfSJtz8B.png",
+        "about": "I do AI. Pew. Pew.",
         "encryptionSupported": True,
         "cashuAccepted": True,
         "nip90Params": {
@@ -39,7 +39,7 @@ def playground(announce=False):
     nip89config.CONTENT = json.dumps(nip89info)
 
     options = {
-        "input": "How do you call a noisy ostrich?",
+        "input": "Good Morning!",
     }
 
     dvm = GenericDVM(name=name, dvm_config=dvm_config, nip89config=nip89config,
@@ -48,7 +48,7 @@ def playground(announce=False):
     async def process(request_form):
         from duck_chat import DuckChat
         options = dvm.set_options(request_form)
-        async with DuckChat(model=ModelType.GPT4o) as chat:
+        async with DuckChat(model=ModelType.Llama) as chat:
             query = options["input"]
             result = await chat.ask_question(query)
             print(result)
