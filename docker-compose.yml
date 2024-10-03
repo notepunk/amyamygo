@@ -1,0 +1,13 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:  # Define the services
+  amyamygo-dvm:  # Name of the service
+    build:  # Build configuration
+      context: .  # Path to the directory containing the Dockerfile
+      dockerfile: Dockerfile  # Name of the Dockerfile (optional if named Dockerfile)
+    ports:  # Port mapping
+      - "80:80"  # Map port 80 of the container to port 80 on the host
+    environment:  # Environment variables
+      env_file: .env
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
