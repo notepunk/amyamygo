@@ -6,25 +6,25 @@
 2. Navigate to the project directory.
 3. Create `.env` from the example provided by us `.env_example`
 
-```bash
-cp .env_example .env
-```
+    ```bash
+    cp .env_example .env
+    ```
 
 and set the necessary environmental variables:
 
-```bash
-LNBITS_ADMIN_KEY = ""
-LNBITS_WALLET_ID = ""
-LNBITS_HOST = "https://demo.lnbits.com/"
-NOSTDRESS_DOMAIN = "nostrdvm.com"
-```
+    ```bash
+    LNBITS_ADMIN_KEY = ""
+    LNBITS_WALLET_ID = ""
+    LNBITS_HOST = "https://demo.lnbits.com/"
+    NOSTDRESS_DOMAIN = "nostrdvm.com"
+    ```
 
 4. You can also change the name of the container in the `docker-compose.yml` file.
 
    ```yaml
     services:  # Define the services
-    dvm:  # Name of the service
-        container_name: amyamygo
+        dvm:  # Name of the service
+            container_name: amyamygo
    ```
 
 5. Run the following command:
