@@ -17,10 +17,11 @@ def playground(announce=False):
     admin_config.REBROADCAST_NIP65_RELAY_LIST = announce
     admin_config.UPDATE_PROFILE = announce
 
+    kind = Kind(5050)
     name = "AmyAmyGo"
     identifier = "AmyAmyGo"  # Chose a unique identifier in order to get a lnaddress
     dvm_config = build_default_config(identifier)
-    dvm_config.KIND = Kind(5050)  # Manually set the Kind Number (see data-vending-machines.org)
+    dvm_config.KIND = kind  # Manually set the Kind Number (see data-vending-machines.org)
     dvm_config.SEND_FEEDBACK_EVENTS = False
 
     # Add NIP89
@@ -37,7 +38,8 @@ def playground(announce=False):
     nip89config = NIP89Config()
     nip89config.DTAG = check_and_set_d_tag(identifier, name, dvm_config.PRIVATE_KEY, nip89info["image"])
     nip89config.CONTENT = json.dumps(nip89info)
-
+    nip89config.KIND = kind
+    
     options = {
         "input": "How do you call a noisy ostrich?",
     }
