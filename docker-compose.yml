@@ -1,7 +1,8 @@
-version: '3.8'  # Specify the version of Docker Compose
+version: '3.8'  
 
 services:  # Define the services
-  amyamygo-dvm:  # Name of the service
+  dvm:  # Name of the service
+    container_name: amyamygo
     build:  # Build configuration
       context: .  # Path to the directory containing the Dockerfile
       dockerfile: Dockerfile  # Name of the Dockerfile (optional if named Dockerfile)
