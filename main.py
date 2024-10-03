@@ -19,9 +19,9 @@ def playground(announce=False):
 
     name = "AmyAmyGo"
     identifier = "AmyAmyGo"  # Chose a unique identifier in order to get a lnaddress
-    kind = 5050
+    kind = Kind(5050)
     dvm_config = build_default_config(identifier)
-    dvm_config.KIND = Kind(kind)  # Manually set the Kind Number (see data-vending-machines.org)
+    dvm_config.KIND = kind  # Manually set the Kind Number (see data-vending-machines.org)
     dvm_config.SEND_FEEDBACK_EVENTS = False
 
     # Add NIP89
